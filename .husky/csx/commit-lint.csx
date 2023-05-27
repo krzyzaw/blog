@@ -1,9 +1,9 @@
 using System.Text.RegularExpressions;
 
 private const string types = "build|feat|ci|chore|docs|fix|perf|refactor|revert|style|test|wip";
-private const string scopes = "candidate search|requisitions|job adverts|settings|screening|project";
+private const string scopes = "General Developer Skill|C#|Testing|Caching|Log Frameworks|Others|Api Clients|Task Scheduling|Architecture|DDD|Design Patterns|DevOps|Microservices|Dependency Injection|ORM|SOLID|ASP Net Core|Databases";
 
-var pattern = @"^(?=.{{1,90}}$)(?:build|feat|ci|chore|docs|fix|perf|refactor|revert|style|test|wip)(?:\()(?:candidate search|requisitions|job adverts|settings|screening|project)(?:\): )\d{{5,}} .+$";
+var pattern = @"(?:build|feat|ci|chore|docs|fix|perf|refactor|revert|style|test|wip)(?:\()(?:General Developer Skill|C#|Testing|Caching|Log Frameworks|Others|Api Clients|Task Scheduling|Architecture|DDD|Design Patterns|DevOps|Microservices|Dependency Injection|ORM|SOLID|ASP Net Core|Databases)(?:\): ).+$";
 private var msg = File.ReadAllLines(Args[0])[0];
 
 if (Regex.IsMatch(msg, string.Format(pattern,types,scopes)))
